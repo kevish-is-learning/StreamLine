@@ -1,11 +1,12 @@
 # compiled output
-/dist
+backend/dist
 
 # dependencies
-/node_modules
+backend/node_modules
+client/node_modules
 
-# generated
-/generated
+# generated (Drizzle migrations are tracked, but generated artifacts are not)
+backend/drizzle/meta
 
 # IDE
 /.idea
@@ -24,7 +25,4 @@ logs
 npm-debug.log*
 
 # test coverage
-/coverage
-
-# Prisma
-/generated/prisma
+backend/coverage

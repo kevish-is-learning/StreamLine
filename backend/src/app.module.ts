@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { PrismaModule } from './prisma/prisma.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -9,8 +9,8 @@ import { PrismaModule } from './prisma/prisma.module';
       isGlobal: true,
     }),
 
-    // Database — PrismaService available globally via @Global()
-    PrismaModule,
+    // Database — DatabaseService (Drizzle) available globally via @Global()
+    DatabaseModule,
   ],
   controllers: [],
   providers: [],
