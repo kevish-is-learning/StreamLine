@@ -1,0 +1,28 @@
+# compiled output
+backend/dist
+
+# dependencies
+backend/node_modules
+client/node_modules
+
+# generated (Drizzle migrations are tracked, but generated artifacts are not)
+backend/drizzle/meta
+
+# IDE
+/.idea
+.DS_Store
+*.swp
+*.swo
+
+# environment variables
+.env
+.env.*
+!.env.example
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# test coverage
+backend/coverage
