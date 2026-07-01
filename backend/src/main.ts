@@ -2,12 +2,11 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe, Logger } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { AllExceptionsFilter } from './filters/http-exception.filter';
 
 async function bootstrap() {
   const logger = new Logger('Bootstrap');
 
-  // Create the app with full logging enabled
+  // Create the app with full logging enabled`
   const app = await NestFactory.create(AppModule, {
     logger: ['log', 'error', 'warn', 'debug', 'verbose'],
   });
@@ -28,8 +27,6 @@ async function bootstrap() {
     }),
   );
 
-  // Global exception filter — consistent error response format
-  app.useGlobalFilters(new AllExceptionsFilter());
 
   // Swagger API documentation at /api/docs
   const swaggerConfig = new DocumentBuilder()

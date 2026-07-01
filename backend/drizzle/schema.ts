@@ -1,6 +1,6 @@
 import { pgTable, uuid, text, timestamp, boolean,  } from 'drizzle-orm/pg-core';
 
-export const users = pgTable('User', {
+export const Users = pgTable('User', {
   id: uuid('id').primaryKey().defaultRandom(),
   name: text('name').notNull(),
   email: text('email').notNull().unique(),
@@ -15,15 +15,13 @@ export const users = pgTable('User', {
     .defaultNow(),
 });
 
-export const creator = pgTable('Creator', {
-  id: uuid('id').primaryKey().defaultRandom(),
-  banner: text('banner').notNull(),
-  userId: uuid('userId').references(() => users.id).notNull(),
-  socialLinks: text('socialLinks').array(),
-  bio: text('bio').notNull(),
-  
-  
-  
+// export const creator = pgTable('Creator', {
+//   id: uuid('id').primaryKey().defaultRandom(),
+//   banner: text('banner').notNull(),
+//   userId: uuid('userId').references(() => users.id).notNull(),
+//   socialLinks: text('socialLinks').array(),
+//   bio: text('bio').notNull(),
+    
 
   
-})
+// })
